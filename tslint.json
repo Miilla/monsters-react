@@ -12,6 +12,7 @@
     "object-literal-sort-keys": false,
     "jsx-no-lambda":false,
     "member-access": false,
+    "only-arrow-functions": false,
     "ordered-imports": [true, {
       "import-sources-order": "any",
       "named-imports-order": "case-insensitive"
