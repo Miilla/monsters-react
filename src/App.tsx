@@ -1,42 +1,36 @@
 import * as React from 'react';
 import './App.css';
 
-import logo from './logo.svg';
+// import silk from '../public/silk.jpg';
+import MonsterList from './components/List';
 import API from './API';
 
-interface IStateType {
-  monsters: any[];
-}
-
-class App extends React.Component<any, IStateType> {
+class App extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
     this.state = {
-      monsters: []
+      monsterImage: ''
     }
   }
 
-  public componentDidMount() {
-    this._getMonsters();
+  componentWillMount() {
+    this._getMonsterImage();
   }
 
-  public _getMonsters() {
-    API.GetMonsters().then(resp => {
-      this.setState({ monsters: resp.data })
-    });
+  public _getMonsterImage() {
+    API.GetMonster('fooz').then(monster => {
+      this.setState({ monsterImage: monster.data.images.thumb.replace('http://localhost:5000', 'https://monster-app.herokuapp.com') })
+    })
   }
 
   public render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">Welcome to the base of most scariest <span className="blood">MONSTERS</span> in the world!</h1>
         </header>
         <div>
-          {this.state.monsters.length > 0 && this.state.monsters.map((monster: any) => {
-            return (<div key={monster.slug}>{monster.name}</div>)
-          })}
+          <MonsterList />
         </div>
       </div>
     );
