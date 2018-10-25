@@ -1,10 +1,6 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  background-color: black;
 }
 
 .App-header {
@@ -14,28 +10,38 @@
   align-items: center;
   flex:1;
   color: white;
-  text-shadow: 2px 2px 8px #FF0000;
   font-family:  'Titillium Web', sans-serif;
   font-weight: 700;
   font-size: 20px;
   flex-direction: column;  
   padding-bottom: 30px;
   padding-top: 10px;
+  padding:10%;  
+}
+
+.parallax { 
   background-image: url("/bloodyy.jpg");
-  background-repeat: repeat-x;
+  height: 500px; 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  padding-top:10%;  
+  background-size: cover;
+}
+
+.app-main {
+  height:1000px;
+  font-size:60px;
+  background-color: black;
+}
+
+.App-title-back {
+  background-color:rgba(0,0,0,0.7);
 }
 
 .App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  font-size: 2em;
 }
 
 .blood {

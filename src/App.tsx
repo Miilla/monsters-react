@@ -26,11 +26,21 @@ class App extends React.Component<any, any> {
   public render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to the base of most scariest <span className="blood">MONSTERS</span> in the world!</h1>
+        <header className="parallax">
+          <div className="App-title-back">
+            <div className="App-title">Welcome to the base of most scariest   <span className="blood"> MONSTERS </span>   in the world!</div>
+          </div>
         </header>
-        <div>
+        <div className="app-main">
           <MonsterList />
+        </div>
+
+        <div className="parallax">
+          <div className="App-title-back">
+            <i className="material-icons">
+              insert_emoticon
+            </i>
+          </div>
         </div>
       </div>
     );
