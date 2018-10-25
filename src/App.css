@@ -20,7 +20,7 @@
 }
 
 .parallax { 
-  background-image: url("/images/bloodyy.jpg");
+  background-image: url("https://raw.githubusercontent.com/Miilla/monsters-react/gh-pages/images/bloodyy.jpg");
   height: 500px; 
   background-attachment: fixed;
   background-position: center;
