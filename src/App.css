@@ -21,7 +21,7 @@
 
 .parallax { 
   background-image: url("https://raw.githubusercontent.com/Miilla/monsters-react/gh-pages/images/bloodyy.jpg");
-  height: 500px; 
+  height: 300px; 
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -31,7 +31,7 @@
 }
 
 .app-main {
-  height:1000px;
+  height:600px;
   font-size:60px;
   background-color: black;
 }

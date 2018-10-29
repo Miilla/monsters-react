@@ -1,6 +1,8 @@
 import * as React from 'react';
 import API from '../API';
 import Monster from 'src/models/Monster';
+import './Components.css'
+import Monsterr from './Monster';
 
 interface IStateType {
   monsters: Monster[];
@@ -26,9 +28,9 @@ class MonsterList extends React.Component<any, IStateType> {
 
   public render() {
     return (
-        <div>
+        <div className="panels">
           {this.state.monsters.length > 0 && this.state.monsters.map((monster: Monster) => {
-            return (<div key={monster.slug}>{monster.name}</div>)
+            return (<Monsterr key={monster.slug} monster={monster}/>)
           })}
         </div>
     );
