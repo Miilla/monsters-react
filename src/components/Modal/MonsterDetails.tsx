@@ -31,19 +31,19 @@ class MonsterDetails extends React.Component<IPropsType, any> {
                 </div>
                 <span className="monster-details-desc">{monster.description}</span>
                 <div className="monster-details-stat">
-                    <span className="monster-details-desc">{'Danger: '}</span>
+                    <span className="monster-details-label">{'Danger: '}</span>
                     <div className="progress stat-bar">
                         <div className="progress-bar progress-bar-striped" role="progressbar" style={{width:danger}} aria-valuenow={20} aria-valuemin={0} aria-valuemax={100}/>
                     </div>
                 </div>
                 <div className="monster-details-stat">
-                    <span className="monster-details-desc">{'Frequency: '}</span>                    
+                    <span className="monster-details-label">{'Frequency: '}</span>                    
                     <div className="progress stat-bar">
                         <div className="progress-bar progress-bar-striped bg-success" role="progressbar" style={{width:frequency}} aria-valuenow={20} aria-valuemin={0} aria-valuemax={100}/>
                     </div>
                 </div>
                 <div className="monster-details-stat">
-                    <span className="monster-details-desc">{'Power: '}</span>                    
+                    <span className="monster-details-label">{'Power: '}</span>                    
                     <div className="progress stat-bar">
                         <div className="progress-bar progress-bar-striped bg-warning" role="progressbar" style={{width:power}} aria-valuenow={20} aria-valuemin={0} aria-valuemax={100}/>
                     </div>

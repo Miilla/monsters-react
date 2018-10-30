@@ -88,4 +88,10 @@
 }
 .stat-bar {
     flex:1;
+    
+}
+
+.monster-details-label {
+    padding-right: 10px;
+    font-size: 17px;
 }
