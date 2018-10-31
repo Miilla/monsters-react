@@ -13,6 +13,7 @@
     "jsx-no-lambda":false,
     "member-access": false,
     "only-arrow-functions": false,
+    "no-eq-null": true,
     "ordered-imports": [true, {
       "import-sources-order": "any",
       "named-imports-order": "case-insensitive"

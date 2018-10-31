@@ -9,6 +9,7 @@ interface IStateType {
     monsters: Monster[];
     isModalVisible: boolean;
     monsterSlug: string;
+    favMonsters: any[];
 }
 
 class MonsterList extends React.Component<any, IStateType> {
@@ -17,7 +18,8 @@ class MonsterList extends React.Component<any, IStateType> {
         this.state = {
             monsters: [],
             isModalVisible: false,
-            monsterSlug: ''
+            monsterSlug: '',
+            favMonsters: []
         }
         this.escFunction = this.escFunction.bind(this);
     }
@@ -50,6 +52,17 @@ class MonsterList extends React.Component<any, IStateType> {
     public _showModal(monsterSlug: string) {
         this.setState({ isModalVisible: true, monsterSlug })
     }
+    
+    public _addRemoveFavorite(monsterSlug: string) {
+        const favData = this.state.favMonsters.slice(0);
+        if (this.state.favMonsters.findIndex((x: any) => x === monsterSlug) > -1) {
+            favData.splice(this.state.favMonsters.findIndex((x: any) => x === monsterSlug));
+        }
+        else {
+            favData.push(monsterSlug);
+        }
+        this.setState({ favMonsters: favData })
+    }
 
     public render() {
         return (
@@ -58,7 +71,8 @@ class MonsterList extends React.Component<any, IStateType> {
                     return (<Monsterr key={monster.slug} monster={monster} onClick={(monsterSlug) => this._showModal(monsterSlug)} />)
                 })}
                 {this.state.isModalVisible === true ?
-                    <Modal monsterSlug={this.state.monsterSlug} monsters={this.state.monsters} exit={()=>{this._exitModal()}}/>
+                    <Modal monsterSlug={this.state.monsterSlug} monsters={this.state.monsters} exit={()=>{this._exitModal()}}
+                    _addRemoveFavorite={(monsterSlug)=> {this._addRemoveFavorite(monsterSlug)}} favMonsters={this.state.favMonsters}/>
                     : null
                 }
             </div>
