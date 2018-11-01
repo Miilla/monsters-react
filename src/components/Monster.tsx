@@ -1,5 +1,4 @@
 import * as React from 'react';
-// import API from '../API';
 import './Components.css'
 import Monster from 'src/models/Monster';
 

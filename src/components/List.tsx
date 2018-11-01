@@ -39,7 +39,7 @@ class MonsterList extends React.Component<any, IStateType> {
         }
     }
 
-    public _exitModal(){        
+    public _exitModal() {
         this.setState({ isModalVisible: false })
     }
 
@@ -52,7 +52,7 @@ class MonsterList extends React.Component<any, IStateType> {
     public _showModal(monsterSlug: string) {
         this.setState({ isModalVisible: true, monsterSlug })
     }
-    
+
     public _addRemoveFavorite(monsterSlug: string) {
         const favData = this.state.favMonsters.slice(0);
         if (this.state.favMonsters.findIndex((x: any) => x === monsterSlug) > -1) {
@@ -71,8 +71,8 @@ class MonsterList extends React.Component<any, IStateType> {
                     return (<Monsterr key={monster.slug} monster={monster} onClick={(monsterSlug) => this._showModal(monsterSlug)} />)
                 })}
                 {this.state.isModalVisible === true ?
-                    <Modal monsterSlug={this.state.monsterSlug} monsters={this.state.monsters} exit={()=>{this._exitModal()}}
-                    _addRemoveFavorite={(monsterSlug)=> {this._addRemoveFavorite(monsterSlug)}} favMonsters={this.state.favMonsters}/>
+                    <Modal monsterSlug={this.state.monsterSlug} monsters={this.state.monsters} exit={() => { this._exitModal() }}
+                        _addRemoveFavorite={(monsterSlug) => { this._addRemoveFavorite(monsterSlug) }} favMonsters={this.state.favMonsters} />
                     : null
                 }
             </div>

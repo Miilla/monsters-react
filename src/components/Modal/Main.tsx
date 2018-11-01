@@ -8,7 +8,7 @@ interface IPropsType {
     monsterSlug: string;
     monsters: Monster[];
     exit: () => void;
-    _addRemoveFavorite: (monsterSlug:string) => void;
+    _addRemoveFavorite: (monsterSlug: string) => void;
     favMonsters: any[];
 }
 
@@ -58,6 +58,8 @@ class Modal extends React.Component<IPropsType, any> {
         if (this.state.monster === '') { return null; }
 
         const { monsters, _addRemoveFavorite, favMonsters } = this.props;
+        const isFavorite = (favMonsters.findIndex((x: any) => x === this.state.monsterSlug) > -1);
+
         return (
             <div className="main-backdrop" onClick={(e) => this.handleClick(e)} >
                 <div className="main-modal" tabIndex={0} onBlur={() => this.props.exit()}  >
@@ -68,8 +70,8 @@ class Modal extends React.Component<IPropsType, any> {
                         <div className="main-header">
                             <div className="exit-icon" />
                             <div className="main-header-name">{this.state.monster.name}</div>
-                            <i className="material-icons exit-icon" onClick={() => _addRemoveFavorite(this.state.monsterSlug)}>
-                                {(favMonsters.findIndex((x: any) => x === this.state.monsterSlug) > -1) ? "favorite_border" : "add_circle"}
+                            <i className="material-icons heart-icon" onClick={() => _addRemoveFavorite(this.state.monsterSlug)} title={(!isFavorite) ? "Add to favourite" : "Remove from favourite"}>
+                                {(isFavorite) ? "favorite" : "favorite_border"}
                             </i>
                         </div>
                         <div className="main-monster-details">
